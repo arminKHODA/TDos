@@ -6,9 +6,9 @@ def print_directory_tree(path, indent=0):
     
     for item in items:
         item_path = os.path.join(path, item)
+        prefix = '    ' * indent + '|-- '
+        print(prefix + item)
         if os.path.isdir(item_path):
-            prefix = '    ' * indent + '|-- '
-            print(prefix + item)
             print_directory_tree(item_path, indent + 1)
 
 def main():
